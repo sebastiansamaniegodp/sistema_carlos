@@ -11,7 +11,7 @@
     @if($m != "")
         {{$m}}
     @endif
-    <table class="">
+    <table class="table">
         <thead>
             <tr>
                 <th>ID </th>
@@ -37,17 +37,25 @@
                 @endforeach
         </tbody>
     </table>
-    <h3><br>Registro de Alumnos</h3>
-    <form method="post" action="agregaralumno">
+    <h3>Registro de Alumnos</h3>
+    <form class="form-horizontal" method="post" action="agregaralumno">
         @csrf
         @method('POST')
-        <input id="nombre" name="nombre" type="text" placeholder="Nombre del alumno...">
-        <input id="turno" name="turno" type="text" placeholder="Turno...">
-        <input id="cedula" name="cedula" type="text" placeholder="Cedula..">
-        <br>
-        <br>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre del alumno...">
+        </div>
+        <div class="form-group">
+            <label for="turno">Turno:</label>
+            <input class="form-control" id="turno" name="turno" type="text" placeholder="Turno...">
+        </div>
+        <div class="form-group">
+            <label for="cedula">Cedula:</label>
+            <input class="form-control" id="cedula" name="cedula" type="text" placeholder="Cedula..">
+        </div>
         <button type="submit" class="btn btn-primary">Agregar</button>
     </form>
+    <br>
 @stop
 
 @section('css')
