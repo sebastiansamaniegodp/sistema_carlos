@@ -9,7 +9,7 @@
 @section('content')
     <p>Panel de control de alumnos del sistema web.</p>
     @if($m != "")
-        {{$m}}
+        {!! $m !!}
     @endif
     <table class="table">
         <thead>
@@ -43,15 +43,18 @@
         @method('POST')
         <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre del alumno...">
+            <input class="form-control" id="nombre" name="nombre" type="text" 
+            placeholder="Nombre del alumno..." required>
         </div>
         <div class="form-group">
             <label for="turno">Turno:</label>
-            <input class="form-control" id="turno" name="turno" type="text" placeholder="Turno...">
+            <input class="form-control" id="turno" name="turno" type="text" 
+            placeholder="Turno..." required>
         </div>
         <div class="form-group">
             <label for="cedula">Cedula:</label>
-            <input class="form-control" id="cedula" name="cedula" type="text" placeholder="Cedula..">
+            <input class="form-control" id="cedula" name="cedula" type="text" 
+            placeholder="Cedula.." required>
         </div>
         <button type="submit" class="btn btn-success">Agregar</button>
     </form>
@@ -62,19 +65,23 @@
         @method('PUT')
         <div class="form-group">
             <label for="id">ID:</label>
-            <input class="form-control" id="id" name="id" type="text" placeholder="ID del alumno..." value="{{$a->id}}">
+            <input class="form-control" id="id" name="id" type="text" 
+            placeholder="ID del alumno..." value="{{$a->id}}" required>
         </div>
         <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre del alumno..." value="{{$a->nombre}}">
+            <input class="form-control" id="nombre" name="nombre" type="text" 
+            placeholder="Nombre del alumno..." value="{{$a->nombre}}" required>
         </div>
         <div class="form-group">
             <label for="turno">Turno:</label>
-            <input class="form-control" id="turno" name="turno" type="text" placeholder="Turno..." value="{{$a->turno}}">
+            <input class="form-control" id="turno" name="turno" type="text" 
+            placeholder="Turno..." value="{{$a->turno}}" required>
         </div>
         <div class="form-group">
             <label for="cedula">Cedula:</label>
-            <input class="form-control" id="cedula" name="cedula" type="text" placeholder="Cedula.." value="{{$a->nrocedula}}">
+            <input class="form-control" id="cedula" name="cedula" type="text" 
+            placeholder="Cedula.." value="{{$a->nrocedula}}" required>
         </div>
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>

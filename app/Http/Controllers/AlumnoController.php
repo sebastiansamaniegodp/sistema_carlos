@@ -34,8 +34,8 @@ class AlumnoController extends Controller
        $alumno->nombre = $request->nombre;
        $alumno->turno = $request->turno;
        $alumno->save();
-        $mensaje = "Se ha agregado al alumno.";
-        return $this->index($mensaje);
+       $mensaje = "<b>Se ha agregado al alumno.</b>";
+       return $this->index($mensaje);
     }
 
     /**
@@ -64,7 +64,7 @@ class AlumnoController extends Controller
         $alumno->nombre = $request->nombre;
         $alumno->turno = $request->turno;
         $alumno->update();
-        $mensaje = "Los datos del alumno han sido actualizados.";
+        $mensaje = "<b>Los datos del alumno han sido actualizados.</b>";
         return $this->index($mensaje);
     }
 
@@ -74,7 +74,7 @@ class AlumnoController extends Controller
     public function destroy($id)
     {
         Alumno::destroy($id);
-        $mensaje = "Se ha borrado al alumno.";
+        $mensaje = "<b>Se ha borrado al alumno.</b>";
         return $this->index($mensaje);
     }
 }
