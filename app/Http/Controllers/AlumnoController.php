@@ -51,15 +51,21 @@ class AlumnoController extends Controller
      */
     public function edit($id)
     {
-        
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Alumno $alumno)
+    public function update(Request $request, $id)
     {
-        //
+        $alumno = Alumno::find($id);
+        $alumno->nrocedula = $request->cedula;
+        $alumno->nombre = $request->nombre;
+        $alumno->turno = $request->turno;
+        $alumno->update();
+        $mensaje = "Los datos del alumno han sido actualizados.";
+        return $this->index($mensaje);
     }
 
     /**

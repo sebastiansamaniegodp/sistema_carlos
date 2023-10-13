@@ -25,4 +25,5 @@ Route::middleware([
     Route::get('/dashboard', 'App\Http\Controllers\AlumnoController@index')->name('dashboard');
     Route::post('/agregaralumno', 'App\Http\Controllers\AlumnoController@store');
     Route::delete('/eliminaralumno/{id}','App\Http\Controllers\AlumnoController@destroy');
+    Route::put('/editaralumno/{id}','App\Http\Controllers\AlumnoController@update');
 });

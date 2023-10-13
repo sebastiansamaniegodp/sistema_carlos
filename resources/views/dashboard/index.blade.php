@@ -53,7 +53,30 @@
             <label for="cedula">Cedula:</label>
             <input class="form-control" id="cedula" name="cedula" type="text" placeholder="Cedula..">
         </div>
-        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="submit" class="btn btn-success">Agregar</button>
+    </form>
+    <br>
+    <h3>Edición de Alumnos</h3>
+    <form class="form-horizontal" method="POST" action="editaralumno/{{$a->id}}">
+        @csrf
+        @method('PUT')
+        <div class="form-group">
+            <label for="id">ID:</label>
+            <input class="form-control" id="id" name="id" type="text" placeholder="ID del alumno..." value="{{$a->id}}">
+        </div>
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="Nombre del alumno..." value="{{$a->nombre}}">
+        </div>
+        <div class="form-group">
+            <label for="turno">Turno:</label>
+            <input class="form-control" id="turno" name="turno" type="text" placeholder="Turno..." value="{{$a->turno}}">
+        </div>
+        <div class="form-group">
+            <label for="cedula">Cedula:</label>
+            <input class="form-control" id="cedula" name="cedula" type="text" placeholder="Cedula.." value="{{$a->nrocedula}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
     <br>
 @stop
